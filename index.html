@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MyMovieList</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+			rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<nav class="nav-items">
+				<div class="nav-center">
+					<button class="active">Filmes</button>
+					<button>Séries</button>
+					<button>Seriados</button>
+				</div>
+				<div class="search-btn" id="div-search">
+					<input type="text" placeholder="Pesquisar Séries e Filmes">
+					<i class="ri-search-2-line" id="search"></i>
+
+				</div>
+				<img src="https://placehold.co/60x60?text=image" alt="Imagem Usuário"
+					class="user-img" id="user-img">
+				<div class="user-menu" id="user-menu">
+					<ul>
+						<li>Entrar</li>
+						<li>Cadastrar-se</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div>
+			<div class="container-filme">
+				<h1>O Máscara</h1>
+				<div class="img-wrapper">
+					<img src="https://placehold.co/150x225?text=image" alt="Capa do Filme"
+						class="filme-img">
+					<p class="age-rate">+16</p>
+					<div class="hover-filme">
+						<button><i class="ri-more-2-fill"></i></button>
+						<div class="more-menu">
+							<ul>
+								<li><i class="ri-heart-3-line"></i> Favorito</li>
+								<li><i class="ri-list-unordered"></i> Adicionar à Lista</li>
+								<li><i class="ri-star-fill"></i> Minha Avaliação</li>
+							</ul>
+						</div>
+						<p>⭐ 8.5</p>
+						<p>2025</p>
+					</div>
+				</div>
+			</div>
+			<!-- <div>
+				<h3>Tendencias</h3>
+			</div>
+			<div>
+				<h3>Populares no Momento</h3>
+				<button>Ver Todos</button>
+			</div>
+			<div>
+				<h3>Ultimos Lançamentos</h3>
+				<button>Ver Todos</button>
+			</div>
+			<div>
+				<h3>Melhor Avaliados</h3>
+				<button>Ver Todos</button>
+			</div> -->
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
