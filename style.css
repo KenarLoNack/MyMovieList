@@ -108,8 +108,10 @@ body {
 	border-radius: 8px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	transition: all 0.2s ease;
+	pointer-events: none;
 }
 .user-menu.active {
+	pointer-events: auto;
 	opacity: 1;
 }
 
@@ -129,8 +131,20 @@ body {
 	background-color: rgb(56, 56, 56);
 }
 
-/* Carrosel */
-
+/* Carrossel */
+.carrossel-tendencias{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	justify-self: center;
+	background-color: aqua;
+	object-fit: cover;
+}
+.carrossel-tendencias img{
+	margin: 10px;
+	border-radius: 40px;
+}
 /* Card Filme */
 .container-filme {
 	width: 150px;
@@ -185,10 +199,25 @@ body {
 	transition: all 0.3s ease;
 	z-index: 2;
 }
-.last-movies{
+.content{
 	display: flex;
 	gap: 30px;
 	flex-wrap: wrap;
+}
+.content h1{
+	color: white;
+}
+/* div que engloba todo o corpo dos conteudos */
+.colections{
+	padding: 0 20px 0 20px;
+}
+.colections .type-colection{
+	color: white;
+	font-size: 20px;
+	margin-top: 50px;
+	margin-bottom: 5px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid white;
 }
 /* Opções container */
 .more-menu{
@@ -205,7 +234,9 @@ body {
 	border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0.68);
 	transition: all 0.3s ease;
+	pointer-events: none;
 	visibility: visible !important;
+	cursor: default;
 	z-index: 3;
 }
 
@@ -213,11 +244,13 @@ body {
 	border-radius: 0px 6px 0px 0px;
 	background-color: rgba(0, 0, 0, 0.68);
 }
-
-.more-menu-btn.active, .more-menu.active, .hover-filme.active{
+.more-menu.active{
+	pointer-events: auto;
 	opacity: 1;
 }
-
+.more-menu-btn.active, .hover-filme.active{
+	opacity: 1;
+}
 
 .more-menu ul{
 	list-style: none;
@@ -225,6 +258,10 @@ body {
 .more-menu li{
 	padding-top: 8px;
 	padding-bottom: 8px;
+}
+.more-menu li:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 .more-menu li:nth-child(2) {
@@ -252,7 +289,7 @@ body {
 	transition: opacity 0.3s ease;
 }
 
-.container-filme:hover .age-rate {
+.container-filme:hover .age-rate, .age-rate.active {
 	opacity: 0;
 }
 

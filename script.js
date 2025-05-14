@@ -62,13 +62,16 @@ document.addEventListener("click", (event) => {
   if (button) {
     const container = button.closest(".container-filme");
     if (container) {
+      container.hidden = false;
       const menu = container.querySelector(".more-menu");
       const hover = container.querySelector(".hover-filme");
+      const ageRate = container.querySelector(".age-rate");
 
       // Verifica se o menu já está aberto
       const isAlreadyActive =
         button.classList.contains("active") &&
         menu.classList.contains("active") &&
+        ageRate.classList.contains("active") &&
         hover.classList.contains("active");
 
       // Fecha o menu atual se outro for clicado
@@ -80,14 +83,16 @@ document.addEventListener("click", (event) => {
       if (isAlreadyActive) {
         button.classList.remove("active");
         menu.classList.remove("active");
+        ageRate.classList.remove("active");
         hover.classList.remove("active");
         lastMovieClicked = null;
       } else {
         button.classList.add("active");
         menu.classList.add("active");
+        ageRate.classList.add("active");
         hover.classList.add("active");
         lastMovieClicked = container.querySelectorAll(
-          ".more-menu-btn.active, .more-menu.active, .hover-filme.active"
+          ".more-menu-btn.active, .more-menu.active, .hover-filme.active, .age-rate.active"
         );
       }
     }
