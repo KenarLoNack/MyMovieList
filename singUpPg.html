@@ -4,9 +4,46 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Cadastrar-se</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.sign-up{
+				width: 500px;
+				height: 700px;
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				justify-content: center;
+				background-color: rgba(0, 0, 0, 0.514);
+			}
+			form{
+				display: flex;
+				flex-direction: column;
+				padding: 0 30px 0 30px;
+				margin: 0;
+				gap: 20px;
+			}
+			.sign-up input{
+				height: 30px;
+				padding-left: 15px;
+				border-radius: 20px;
+				border: 1px solid white;
+			}
+			.sign-up button{
+				width: 200px;
+				height: 30px;
+				align-self: center;
+				border-radius: 20px;
+				border: none;
+				cursor: pointer;
+				
+			}
+		</style>
 	</head>
 	<body>
-		<div>
+		<div class="sign-up">
 			<form autocomplete="on">
 				<h1>Cadastrar-se</h1>
 				<input name="username" type="text" placeholder="NickName">
