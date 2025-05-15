@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Cadastrar-se</title>
+		<title>Login</title>
 		<style>
 			*{
 				margin: 0;
@@ -13,7 +13,7 @@
 			body{
 				background-image: url("https://pipocasclub.com.br/wp-content/uploads/2019/10/netflix-3.jpg");
 			}
-			.sign-up{
+			.sign-in{
 				width: 700px;
 				height: 100vh;
 				display: flex;
@@ -23,45 +23,56 @@
 				background-color: rgba(0, 0, 0, 0.7);
 			}
 			form{
-				display: flex;
+				display: grid;
 				flex-direction: column;
 				padding: 0 70px 0 70px;
 				margin: 0;
 				gap: 25px;
 			}
-			.sign-up input{
+			.sign-in input{
 				height: 40px;
 				padding-left: 15px;
 				border-radius: 30px;
 				font-size: medium;
 				border: 1px solid white;
 			}
-			.sign-up button{
+			.login-btn{
 				width: 200px;
 				height: 40px;
 				font-size: medium;
 				align-self: center;
+				justify-self: center;
 				border-radius: 20px;
 				margin-top: 20px;
 				border: none;
 				cursor: pointer;
 				
 			}
-			.sign-up h1{
+			.fgt-pass{
+				color: white;
+				justify-self: end;
+				margin-right: 10px;
+				background-color: transparent;
+				border: none;
+			}
+			.fgt-pass:hover{
+				text-decoration: underline;
+			}
+			h1{
 				color: white;
 				margin-bottom: 20px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="sign-up">
+		<div class="sign-in">
 			<form autocomplete="on">
-				<h1>Cadastrar-se</h1>
-				<input name="username" type="text" placeholder="Nickname">
-				<input name="email" type="email" placeholder="Email" autocomplete="email">
+				<h1>Login</h1>
+				<input name="username" type="email" placeholder="Nickname or email">
 				<input name="password" type="password" placeholder="Senha"
 					autocomplete="new-password">
-				<button>Cadastrar</button>
+				<button class="fgt-pass">Esqueci a Senha</button>
+				<button class="login-btn">Login</button>
 			</form>
 
 		</div>
