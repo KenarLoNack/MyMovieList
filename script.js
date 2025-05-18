@@ -50,10 +50,29 @@ document.addEventListener("click", (e) => {
 
 let lastMovieClicked = null;
 
-// container filmes
 document.addEventListener("click", (event) => {
   const button = event.target.closest(".more-menu-btn");
   const isMenuClick = event.target.closest(".more-menu");
+  const insidebtnmenu = event.target.closest("li");
+
+  // Sistema de favorito (antes de sair da função!)
+  if (insidebtnmenu) {
+    const icon = insidebtnmenu.querySelector("i");
+    if (
+      icon.classList.contains("ri-heart-3-line") ||
+      icon.classList.contains("ri-heart-3-fill")
+    ) {
+      icon.classList.toggle("active");
+      if (icon.classList.contains("active")) {
+        icon.classList.remove("ri-heart-3-line");
+        icon.classList.add("ri-heart-3-fill");
+      } else {
+        icon.classList.remove("ri-heart-3-fill");
+        icon.classList.add("ri-heart-3-line");
+      }
+    }
+    return; // para evitar conflitos com os menus
+  }
 
   // Se clicou dentro do menu, não faz nada
   if (isMenuClick) return;
@@ -67,19 +86,17 @@ document.addEventListener("click", (event) => {
       const hover = container.querySelector(".hover-filme");
       const ageRate = container.querySelector(".age-rate");
 
-      // Verifica se o menu já está aberto
       const isAlreadyActive =
         button.classList.contains("active") &&
         menu.classList.contains("active") &&
         ageRate.classList.contains("active") &&
         hover.classList.contains("active");
 
-      // Fecha o menu atual se outro for clicado
+      // Fecha o menu anterior
       if (!isAlreadyActive && lastMovieClicked) {
         lastMovieClicked.forEach((el) => el.classList.remove("active"));
       }
 
-      // Alterna o menu clicado
       if (isAlreadyActive) {
         button.classList.remove("active");
         menu.classList.remove("active");
@@ -97,7 +114,7 @@ document.addEventListener("click", (event) => {
       }
     }
   } else {
-    // Clicou fora de tudo: fecha o menu aberto
+    // Clicou fora de tudo: fecha o menu
     if (lastMovieClicked) {
       lastMovieClicked.forEach((el) => el.classList.remove("active"));
       lastMovieClicked = null;
